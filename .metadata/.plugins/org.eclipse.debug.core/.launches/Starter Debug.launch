@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.eclipse.cdt.launch.applicationLaunchType">
+<stringAttribute key="iar.debug.launch.version.tag" value="com.iar.cdt.arm.debugger"/>
+<stringAttribute key="iar.debug.setting.configName" value="ST-LINK"/>
+<stringAttribute key="iar.debug.setting.configProvider" value="com.iar.cdt.arm.debugger.stlink.driver"/>
+<stringAttribute key="iar.debug.setting.driver" value="armstlink2"/>
+<listAttribute key="iar.debug.setting.driverconfig">
+<listEntry value="--backend"/>
+<listEntry value="-B"/>
+<listEntry value="--endian=little"/>
+<listEntry value="--cpu=Cortex-M3"/>
+<listEntry value="--fpu=None"/>
+<listEntry value="-p"/>
+<listEntry value="$TOOLKIT_DIR$\config\debugger\ST\STM32F103RB.ddf"/>
+<listEntry value="--drv_verify_download"/>
+<listEntry value="--semihosting"/>
+<listEntry value="--device=STM32F103RB"/>
+<listEntry value="**boardFile="/>
+<listEntry value="**setupMacrosList=&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;java version=&quot;1.8.0_91&quot; class=&quot;java.beans.XMLDecoder&quot;&gt; &lt;object class=&quot;java.util.ArrayList&quot;&gt;  &lt;void method=&quot;add&quot;&gt;   &lt;string&gt;&lt;/string&gt;  &lt;/void&gt;  &lt;void method=&quot;add&quot;&gt;   &lt;string&gt;&lt;/string&gt;  &lt;/void&gt; &lt;/object&gt;&lt;/java&gt;"/>
+<listEntry value="--stlink_reset_strategy=0,0"/>
+<listEntry value="--drv_interface=SWD"/>
+<listEntry value="--drv_swo_clock_setup=72000000,0,2000000"/>
+<listEntry value="--board_file=$TOOLKIT_DIR$\config\flashloader\ST\FlashSTM32F10xxB.board"/>
+</listAttribute>
+<listAttribute key="iar.debug.setting.extraOptions"/>
+<stringAttribute key="iar.debug.setting.kernelType" value="com.iar.ide.debugger.cdp.cspy.CDPKernel"/>
+<listAttribute key="iar.debug.setting.pluginslist">
+<listEntry value="$EW_DIR$/common/plugins/ServiceCodeCoveragePlugin@ServiceCodeCoveragePlugin"/>
+</listAttribute>
+<stringAttribute key="iar.debug.setting.processor" value="armproc"/>
+<booleanAttribute key="iar.debug.setting.stopAtMain" value="true"/>
+<stringAttribute key="iar.debug.setting.stopAtMainSymbol" value="main"/>
+<booleanAttribute key="iar.debug.setting.useExtraOptions" value="false"/>
+<booleanAttribute key="org.eclipse.cdt.dsf.gdb.AUTO_SOLIB" value="true"/>
+<listAttribute key="org.eclipse.cdt.dsf.gdb.AUTO_SOLIB_LIST"/>
+<stringAttribute key="org.eclipse.cdt.dsf.gdb.DEBUG_NAME" value="gdb"/>
+<booleanAttribute key="org.eclipse.cdt.dsf.gdb.DEBUG_ON_FORK" value="false"/>
+<stringAttribute key="org.eclipse.cdt.dsf.gdb.GDB_INIT" value=".gdbinit"/>
+<booleanAttribute key="org.eclipse.cdt.dsf.gdb.NON_STOP" value="false"/>
+<booleanAttribute key="org.eclipse.cdt.dsf.gdb.REVERSE" value="false"/>
+<stringAttribute key="org.eclipse.cdt.dsf.gdb.REVERSE_MODE" value="UseSoftTrace"/>
+<listAttribute key="org.eclipse.cdt.dsf.gdb.SOLIB_PATH"/>
+<stringAttribute key="org.eclipse.cdt.dsf.gdb.TRACEPOINT_MODE" value="TP_NORMAL_ONLY"/>
+<booleanAttribute key="org.eclipse.cdt.dsf.gdb.UPDATE_THREADLIST_ON_SUSPEND" value="false"/>
+<booleanAttribute key="org.eclipse.cdt.dsf.gdb.internal.ui.launching.LocalApplicationCDebuggerTab.DEFAULTS_SET" value="true"/>
+<intAttribute key="org.eclipse.cdt.launch.ATTR_BUILD_BEFORE_LAUNCH_ATTR" value="2"/>
+<stringAttribute key="org.eclipse.cdt.launch.COREFILE_PATH" value=""/>
+<stringAttribute key="org.eclipse.cdt.launch.DEBUGGER_ID" value="gdb"/>
+<stringAttribute key="org.eclipse.cdt.launch.DEBUGGER_START_MODE" value="run"/>
+<booleanAttribute key="org.eclipse.cdt.launch.DEBUGGER_STOP_AT_MAIN" value="true"/>
+<stringAttribute key="org.eclipse.cdt.launch.DEBUGGER_STOP_AT_MAIN_SYMBOL" value="main"/>
+<stringAttribute key="org.eclipse.cdt.launch.PROGRAM_NAME" value="Debug/Starter.out"/>
+<stringAttribute key="org.eclipse.cdt.launch.PROJECT_ATTR" value="Starter"/>
+<booleanAttribute key="org.eclipse.cdt.launch.PROJECT_BUILD_CONFIG_AUTO_ATTR" value="true"/>
+<stringAttribute key="org.eclipse.cdt.launch.PROJECT_BUILD_CONFIG_ID_ATTR" value="iar.arm.toolchain.project.exe.configuration.debug.v5.4.0.763011214"/>
+<booleanAttribute key="org.eclipse.cdt.launch.use_terminal" value="true"/>
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
+<listEntry value="/Starter"/>
+</listAttribute>
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
+<listEntry value="4"/>
+</listAttribute>
+<mapAttribute key="org.eclipse.debug.core.preferred_launchers">
+<mapEntry key="[debug]" value="com.iar.cdt.arm.debugger.launchDelegate"/>
+<mapEntry key="[run]" value="com.iar.cdt.arm.debugger.launchDelegate"/>
+</mapAttribute>
+<stringAttribute key="org.eclipse.dsf.launch.MEMORY_BLOCKS" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; standalone=&quot;no&quot;?&gt;&#13;&#10;&lt;memoryBlockExpressionList context=&quot;Context string&quot;/&gt;&#13;&#10;"/>
+</launchConfiguration>

@@ -1,0 +1,29 @@
+!SESSION 2017-01-12 21:57:35.118 -----------------------------------------------
+eclipse.buildId=4.6.1.M20160907-1200
+java.version=1.8.0_91
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_SG
+Framework arguments:  -product org.eclipse.epp.package.cpp.product -product org.eclipse.epp.package.cpp.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.cpp.product -data C:\Users\Han\Documents\Envilink\SD -product org.eclipse.epp.package.cpp.product
+
+!ENTRY org.eclipse.emf.ecore 2 0 2017-01-12 21:57:37.233
+!MESSAGE Both 'com.iar.ide.debugger.driver' and 'com.iar.ide.debugger.driver' register a package for 'platform:/resource/com.iar.ide.debugger.driver/model/dbgdriverservice.ecore'
+
+!ENTRY org.eclipse.emf.ecore 2 0 2017-01-12 21:57:37.239
+!MESSAGE Both 'com.iar.importer.core' and 'com.iar.importer.core' register a package for 'http://www.iar.com/ewsample.xsd'
+
+!ENTRY org.eclipse.egit.ui 2 0 2017-01-12 21:57:45.988
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\Han'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.cdt.core 1 0 2017-01-12 21:59:07.425
+!MESSAGE Indexed 'Starter' (36 sources, 61 headers) in 3.36 sec: 5,586 declarations; 26,250 references; 0 unresolved inclusions; 11 syntax errors; 0 unresolved names (0%)
+
+!ENTRY com.iar.cdt.arm.toolchain 2 0 2017-01-12 22:01:21.056
+!MESSAGE Unknown key in .i79 file: com.iar.ide.utils.emf.inifile.impl.PropertyImpl@1916d0eb (value: false, name: SIMD, originalLine: SIMD=false, property: true)
+
+!ENTRY com.iar.cdt.arm.debugger.jlink 4 0 2017-01-12 22:01:21.067
+!MESSAGE Unsupported speed: auto
