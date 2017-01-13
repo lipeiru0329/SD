@@ -13,22 +13,28 @@ FRESULT rc;				/* Result code */
 	FILINFO fno;			/* File information object */
 	UINT bw, br, i;
 	BYTE buff[128];
+
+#define MAXLENGTH 100
+
+char data[]="today is a nice day\n";
+int length = 0;
+
 /* Private function prototypes -----------------------------------------------*/
 void die (FRESULT rc);
 void SPI_SD_Configuration(void);
+void write_new_data(char* data, uint8_t length);
 
 int main()
 {
 
 	SPI_SD_Configuration();
 
-	printf("start to read file\n");
+	write_new_data(data, sizeof(data));
 
-	/* Register volume work area (never fails) */
 	f_mount(0, &fatfs);
 
 	printf("\nOpen a test file (test.txt).\n");
-	rc = f_open(&fil, "test.txt", FA_READ);
+	rc = f_open(&fil, "data.csv", FA_READ);
 	if (rc) die(rc);
 
 	printf("\nType the file content.\n");
@@ -38,25 +44,6 @@ int main()
 		for (i = 0; i < br; i++)		/* Type the data */
 			putchar(buff[i]);
 	}
-	if (rc) die(rc);
-
-	printf("\nClose the file.\n");
-	rc = f_close(&fil);
-	if (rc) die(rc);
-
-
-	printf("\nCreate a new file (hello.txt).\n");
-	rc = f_open(&fil, "HELLO.TXT", FA_WRITE | FA_CREATE_ALWAYS);
-	if (rc) die(rc);
-
-	printf("\nWrite a text data. (Hello world!)\n");
-	rc = f_write(&fil, "Hello world!\r\n", 14, &bw);
-	if (rc) die(rc);
-	printf("%u bytes written.\n", bw);
-
-	printf("\nClose the file.\n");
-	rc = f_close(&fil);
-	if (rc) die(rc);
 }
 
 void SPI_SD_Configuration(void)
@@ -120,4 +107,26 @@ DWORD get_fattime (void)
 			| ((DWORD)0 << 11)
 			| ((DWORD)0 << 5)
 			| ((DWORD)0 >> 1);
+}
+
+void write_new_data(char new_str[], uint8_t length)
+{
+	printf("start to read file\n");
+
+	/* Register volume work area (never fails) */
+	f_mount(0, &fatfs);
+
+	printf("\nOpen the data file (data.csv).\n");
+	rc = f_open(&fil, "data.csv", FA_WRITE | FA_CREATE_ALWAYS);
+	if (rc) die(rc);
+
+	printf("\nWrite a text data. (Hello world!)\n");
+	rc = f_write(&fil, new_str, length, &bw);
+	if (rc) die(rc);
+	printf("%u bytes written.\n", bw);
+
+	printf("\nClose the file.\n");
+	rc = f_close(&fil);
+	if (rc) die(rc);
+
 }
