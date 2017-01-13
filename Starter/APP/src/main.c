@@ -1,46 +1,10 @@
 #include "stm32f10x.h"
 #include "stm32f10x_it.h"
 #include "xprintf.h"
-#include "BSP.h"
-#include "am2301.h"
-#include "scheduler.h"
-#include "oled.h"
 #include "diskio.h"
 #include "ff.h"
 #include "mmc_sd.h"
-
-//#define _FS_READONLY  0
-
-const uint8_t PMS5003S_port = 2;
-char data[32];
-int ME2_counter = 0;
-int ME2_CollectDataFlag= 0;
-int PMS_counter = 0;
-int PMS_CollectDataFlag= 0;
-int newdata_flag = 0;
-int muxport = 1; //ME2 = 1; PMS = 2;
-int ME2_dataID = 0;
-int PMS_dataID = 0;
-TM_AM2301_Data_t tempData;
-
-uint8_t Retry = 0;
-
-DSTATUS status;
-
-int retry = 0;
-int r1 = 2;
-//int r9 =0;
-
-/***************************/
-//unsigned char send_buffer[1024];    //发送数据缓冲区
-char send_buffer[1024];    //发送数据缓冲区
-unsigned char receive_buffer[1024];//接收数据缓冲区
-
-
-unsigned char Buffercmp(u8* pBuffer1, u8* pBuffer2, u16 BufferLength);
-FRESULT res;         // FatFs 中函数执行结果
-UINT bw,br;          // 写入和读出数据字节计数器
-DWORD free_clust;    //空簇，空扇区大小
+#include "stdio.h"
 
 FRESULT rc;				/* Result code */
 	FATFS fatfs;			/* File system object */
@@ -51,14 +15,11 @@ FRESULT rc;				/* Result code */
 	BYTE buff[128];
 /* Private function prototypes -----------------------------------------------*/
 void die (FRESULT rc);
-
-
 void SPI_SD_Configuration(void);
 
 int main()
 {
 
-	BSP_Init();
 	SPI_SD_Configuration();
 
 	printf("start to read file\n");
@@ -96,7 +57,6 @@ int main()
 	printf("\nClose the file.\n");
 	rc = f_close(&fil);
 	if (rc) die(rc);
-
 }
 
 void SPI_SD_Configuration(void)
@@ -144,21 +104,6 @@ void SPI_SD_Configuration(void)
 }
 
 
-unsigned char Buffercmp(u8* pBuffer1, u8* pBuffer2, u16 BufferLength)
-{
-  while(BufferLength--)
-  {
-    if(*pBuffer1 != *pBuffer2)
-    {
-      return 0;
-    }
-
-    pBuffer1++;
-    pBuffer2++;
-  }
-
-  return 1;
-}
 
 void die (FRESULT rc)
 {
