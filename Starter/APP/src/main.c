@@ -39,9 +39,9 @@ int main()
 
 	printf("\nType the file content.\n");
 	for (;;) {
-		rc = f_read(&fil, buff, sizeof(buff), &br);	/* Read a chunk of file */
-		if (rc || !br) break;			/* Error or end of file */
-		for (i = 0; i < br; i++)		/* Type the data */
+		rc = f_read(&fil, buff, sizeof(buff), &br);
+		if (rc || !br) break;
+		for (i = 0; i < br; i++)
 			putchar(buff[i]);
 	}
 }
